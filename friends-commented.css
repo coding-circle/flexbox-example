@@ -1,0 +1,97 @@
+body {
+  /* backgrounds can be more than colors. they can be images, or even gradients using this complicated-ass syntax. and these gradients can be heavily abused to make wacky patterns */
+  background: linear-gradient(90deg, rgba(183,230,201,1) 0%, rgba(155,208,236,0.5913173652694611) 100%);
+  margin: 64px;
+}
+
+/* this means: 'select all elements that have any of these classes' */
+.friend-one, .friend-two, .star, .normie {
+  width: 200px;
+  height: 200px;
+
+  /* for elements that have any of these classes, ensure any animations run forever */
+  animation-iteration-count: infinite; 
+}
+
+.friend-one {
+  /* set the background of an element as an image */
+  background-image: url("friend-one.jpg");
+  /* ensure the background image is a 'best-fit', always filling the frame with content */
+  background-size: cover;
+  /* what creates the circle shape; round the corners all the way, equivalent in this case to `border-radius: 100px;` */
+  border-radius: 100%;
+
+  /* give this class an animation named 'spin-dog' */
+  animation-name: spin-dog;
+  /* make that animation last 2 seconds */
+  animation-duration: 2s;
+}
+
+/* define the animation named 'spin-dog' */
+@keyframes spin-dog {
+  /* set the styles at the starting keyframe */
+  from {
+    /* rotate the element N degrees */
+    transform: rotate(0deg);
+  }
+  /* set the styles at the ending keyframe */
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.friend-two {
+  background-image: url("friend-two.jpg");
+  background-size: cover;
+  transform: rotate(-45deg);
+
+  animation-name: bounce-twist;
+  animation-duration: 3s;
+}
+
+@keyframes bounce-twist {
+  from {
+    /* multiple `transform` properties can be defined at once. `scale` makes things bigger or smaller, by multiplying the size by N */
+    transform: scale(0.9) rotate(-30deg);
+  }
+  /* in addition to `from` and `to`, you can set a percentage of how far through the animation another set of style changes should happen */
+  50% {
+    transform: scale(1.1) rotate(-15deg);
+  }
+  to {
+    transform: scale(0.9) rotate(-30deg);
+  }
+}
+
+.star {
+  /* the .star is an SVG graphic, so background-color doesn't apply -- it responds to 'fill', a graphics-design term */
+  fill: cyan;
+
+  animation-name: bisexual-lighting;
+  animation-duration: 10s;
+}
+
+@keyframes bisexual-lighting {
+  from {
+    fill: cyan;
+  }
+  50% {
+    fill: magenta;
+  }
+  to {
+    fill: cyan;
+  }
+}
+
+.normie {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: sans-serif;
+  background-color: gray;
+  /* set a solid-style white border, 6 pixels wide */
+  border: 6px solid white;
+  border-radius: 8px;
+  /* give the element a gray, 12px-wide drop shadow offset from x and y 4px, respectively */
+  box-shadow: 4px 4px 12px gray;
+}

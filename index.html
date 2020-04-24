@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>~*~fLeXbOx~*~</title>
+    <link href="friends.css" rel="stylesheet"/>
+    <style>
+    
+    .flexbox-container {
+      min-height: 600px;
+
+      display: flex;
+      justify-content: space-between;
+      flex-shrink: 0;
+
+      /* align-items: center; */
+      /* flex-direction: row-reverse; */
+      /* flex-wrap: wrap */
+
+      /* background-color: yellow; */
+    }
+
+    /* this means "all immediate descendent elements of an element with class 'flexbox-container'" */
+    .flexbox-container > * {
+      /* flex-shrink: 0; */
+    }
+
+    .normie {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* flex-grow: 1; */
+    }
+
+    </style>
+  </head>
+  <body>
+    <article class="flexbox-container">
+
+      <!-- one friend -->
+      <div class="friend-one"></div>
+
+      <!-- another friend -->
+      <div class="friend-two"></div>
+
+      <!-- a star .svg -->
+      <svg class="star" viewBox="0 0 48 46">
+        <path d="M24 0L29.6129 17.2746H47.7764L33.0818 27.9508L38.6946 45.2254L24 34.5491L9.30537 45.2254L14.9182 27.9508L0.223587 17.2746H18.3871L24 0Z" />
+      </svg>
+
+      <div class="normie">Boring</div>
+
+      <div class="normie">Snoozefest</div>
+
+    </article>
+  </body>
+</html>

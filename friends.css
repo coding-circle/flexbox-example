@@ -1,0 +1,80 @@
+body {
+  background: linear-gradient(90deg, rgba(183,230,201,1) 0%, rgba(155,208,236,0.5913173652694611) 100%);
+  margin: 64px;
+}
+
+.friend-one, .friend-two, .star, .normie {
+  width: 200px;
+  height: 200px;
+
+  animation-iteration-count: infinite; 
+}
+
+.friend-one {
+  background-image: url("friend-one.jpg");
+  background-size: cover;
+  border-radius: 100%;
+
+  animation-name: spin-dog;
+  animation-duration: 2s;
+}
+
+@keyframes spin-dog {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.friend-two {
+  background-image: url("friend-two.jpg");
+  background-size: cover;
+  transform: rotate(-45deg);
+
+  animation-name: bounce-twist;
+  animation-duration: 3s;
+}
+
+@keyframes bounce-twist {
+  from {
+    transform: scale(0.9) rotate(-30deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(-15deg);
+  }
+  to {
+    transform: scale(0.9) rotate(-30deg);
+  }
+}
+
+.star {
+  fill: cyan;
+
+  animation-name: bisexual-lighting;
+  animation-duration: 10s;
+}
+
+@keyframes bisexual-lighting {
+  from {
+    fill: cyan;
+  }
+  50% {
+    fill: magenta;
+  }
+  to {
+    fill: cyan;
+  }
+}
+
+.normie {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: sans-serif;
+  background-color: gray;
+  border: 6px solid white;
+  border-radius: 8px;
+  box-shadow: 4px 4px 12px gray;
+}
